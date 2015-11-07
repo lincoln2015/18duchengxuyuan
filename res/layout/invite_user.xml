@@ -1,0 +1,76 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#e7e7e6" >
+
+    <RelativeLayout
+            android:id="@+id/toppanel"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#0077d9"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="9"
+            android:orientation="vertical" >
+
+            <EditText
+               android:layout_marginTop="10dp"
+               android:layout_marginLeft="5dp"
+        	   android:layout_marginBottom="10dp"
+                android:background="#ffffff"
+                android:hint="输入邀请人姓名"
+                android:id="@+id/search_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                 />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cancel_ly"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center|right"
+            android:orientation="vertical" >
+
+            <TextView
+                android:textSize="16sp"
+                android:textColor="#ffffff"
+                android:id="@+id/cancel_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="取消" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    
+</RelativeLayout>
+
+    <LinearLayout
+        android:layout_weight="9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ListView
+            android:divider="@drawable/liner"
+            android:dividerHeight="1px"
+            android:id="@+id/user_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+        </ListView>
+
+    </LinearLayout>
+
+</LinearLayout>

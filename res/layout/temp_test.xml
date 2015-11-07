@@ -1,0 +1,66 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+   
+
+    <TextView
+        android:id="@+id/test_url_main_tv_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/test_url_main_btn_connect"
+        android:layout_alignRight="@+id/content_text"
+        android:text="TextView" />
+
+    <WebView
+        android:id="@+id/test_url_main_wv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/test_url_main_btn_httpurlconnection" />
+
+    <Button
+        android:id="@+id/test_url_main_btn_urlconnection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/content_text"
+        android:layout_toRightOf="@+id/test_url_main_iv_show"
+        android:text="urlconnection" />
+
+    <Button
+        android:id="@+id/test_url_main_btn_httpclient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/test_url_main_btn_urlconnection"
+        android:layout_below="@+id/test_url_main_btn_urlconnection"
+        android:text="httpclient" />
+
+    <Button
+        android:id="@+id/test_url_main_btn_httpurlconnection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/test_url_main_btn_connect"
+        android:text="httpurlconnection" />
+
+    <ImageView
+        android:id="@+id/test_url_main_iv_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/test_url_main_wv"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="50dp"
+        android:src="@drawable/ic_launcher" />
+
+    <Button
+        android:id="@+id/test_url_main_btn_connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/test_url_main_iv_show"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="40dp"
+        android:text="connect" />
+
+</RelativeLayout>

@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/question_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView" 
+            style="@style/DefaultFontStyle" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dip" >
+
+        <TextView
+            android:id="@+id/focus_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/BluFontStyle"
+            android:textSize="12sp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/BluFontStyle"
+             android:textSize="12sp"
+            android:text="人关注" />
+
+        <TextView
+            android:id="@+id/answer_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/BluFontStyle"
+             android:textSize="12sp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/user_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/BluFontStyle"
+             android:textSize="12sp"
+            android:text="个回答" />
+
+    </LinearLayout>
+
+</LinearLayout>

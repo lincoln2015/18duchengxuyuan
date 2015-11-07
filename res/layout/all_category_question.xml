@@ -1,0 +1,70 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/category_question_ly"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:background="#e7e7e6">
+
+<RelativeLayout
+            android:id="@+id/toppanel"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" >    
+    <LinearLayout
+            android:background="#0077d9"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/back_ly"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center|left"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center|left"
+            android:layout_weight="2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:textColor="#ffffff"
+                android:id="@+id/all_question_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="全部问题"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    
+ </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <ListView
+            android:divider="@drawable/liner"
+            android:dividerHeight="1px"
+            android:id="@+id/questionlistview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </ListView>
+    </LinearLayout>
+
+</LinearLayout>

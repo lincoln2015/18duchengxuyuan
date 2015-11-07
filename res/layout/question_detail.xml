@@ -1,0 +1,317 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/questiondetail_ly"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+       
+	<RelativeLayout
+            android:id="@+id/toppanel"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_weight="1"
+        android:background="#0077d9"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/back_ly"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/back" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:textColor="#ffffff"
+                android:id="@+id/answer_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:gravity="center"
+              
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/share_ly"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/operation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/share" />
+
+            
+
+        </LinearLayout>
+
+    </LinearLayout>
+ </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#e7e7e6" >
+
+        <LinearLayout
+       
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:orientation="vertical" >
+			 <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                 android:background="#b4b1b1"
+                
+              />
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|left"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/question_content"
+                        style="@style/DefaultFontStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                 android:background="#b4b1b1"
+                
+              />
+
+                <LinearLayout
+                    android:id="@+id/question_detail_ly"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/question_detail"
+                        style="@style/DefaultFontStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dip"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                 android:background="#b4b1b1"
+                
+              />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                           android:textSize="11sp"
+                        android:id="@+id/focus_count"
+                        style="@style/BluFontStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="关注数" />
+
+                    <TextView
+                        android:layout_marginLeft="10dp"
+                        android:textSize="11sp"
+                        android:id="@+id/thanks_count"
+                        style="@style/BluFontStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/focus_count"
+                        android:text="感谢数" />
+
+                  
+
+                    <RelativeLayout
+                        android:id="@+id/thanks_ly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_toLeftOf="@+id/foucus_ly" >
+
+                        <ImageView
+                            android:id="@+id/thanks_img"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/zhang_3_grey" />
+
+                        <TextView
+                            android:textSize="11sp"
+                       		android:textColor="#999696"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@+id/thanks_img" 
+                            android:id="@+id/thanks_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="感谢" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/foucus_ly"       
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true" >
+
+                        <ImageView
+                            android:id="@+id/focus_img"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/focus_grey_icon_grey_background" />
+
+                        <TextView
+                            android:textSize="11sp"
+                        	android:textColor="#999696"
+                            android:id="@+id/focus_text"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@+id/focus_img" 
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="关注" />
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="3"
+                android:background="#b4b1b1"
+                android:gravity="center" >
+
+                <RelativeLayout
+                    android:paddingLeft="25dp"
+                    android:layout_margin="1dp"
+                    android:background="#e7e7e6"
+                      android:id="@+id/ask_reply"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" >
+
+                    <ImageView
+                           android:layout_centerVertical="true"
+                        android:id="@+id/imageView4"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/invite_grey_icon_grey_background" />
+
+                    <TextView
+                        android:textSize="11sp"
+                        android:textColor="#999696"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/imageView4"         
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="邀请答复" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:paddingLeft="10dp"
+                   	android:layout_margin="1dp"
+                    android:background="#e7e7e6"
+                    android:id="@+id/questioned_layout_btn"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" >
+
+                    <ImageView
+                           android:layout_centerVertical="true"
+                        android:id="@+id/imageView5"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/add_answer_grey_icon_grey_background" />
+
+                    <TextView
+                           android:textSize="11sp"
+                        android:textColor="#999696"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/imageView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="添加答案" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:orientation="vertical" >
+
+                <ListView
+                    android:divider="@drawable/liner"  
+    				android:dividerHeight="1px" 
+                    android:id="@+id/question_answer_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="367dp" >
+                </ListView>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

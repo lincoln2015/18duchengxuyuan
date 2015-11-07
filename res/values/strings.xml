@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">"18度程序猿"</string>
+    <string name="hello_world">Hello world!</string>
+    
+      <string name="version_not_support">当前版本不支持</string>
+
+</resources>

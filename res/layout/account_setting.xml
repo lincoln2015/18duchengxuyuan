@@ -1,0 +1,299 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+      android:background="#e7e7e6"
+    android:orientation="vertical" >
+   
+    <LinearLayout
+        android:layout_width="match_parent"
+       	android:layout_height="50dip"
+        android:background="#0077d9"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center|left"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/back_ly"
+                android:layout_width="28dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/menu" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center|left"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/content_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设置"
+       			android:textColor="#ffffff"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#e7e7e6" />
+
+    <LinearLayout
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="10dip"
+        android:paddingBottom="10dip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dip"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+
+        	>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/user_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_launcher" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/account_profile_ly"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:orientation="vertical" >
+
+                <TextView
+                     style="@style/DefaultFontStyle"
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                   />
+
+                <TextView
+                     style="@style/DefaultFontStyle"
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="修改个人资料" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+		<View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#e7e7e6" />
+
+		<LinearLayout
+		    android:paddingLeft="10dip"
+	        android:paddingRight="10dip"
+	        android:paddingTop="10dip"
+	        android:paddingBottom="10dip"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical" >
+
+		    <LinearLayout
+		        android:id="@+id/notification_seting_ly"
+		        android:layout_width="match_parent"
+		        android:layout_height="40dp"
+		        android:background="#ffffff"
+		        android:gravity="center|start"
+		        android:orientation="horizontal"
+		        android:paddingBottom="10dip"
+		        android:paddingTop="10dip" >
+
+		        <TextView
+		             style="@style/DefaultFontStyle"
+		            android:id="@+id/textView5"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="  推送消息设置" />
+		    </LinearLayout>
+		</LinearLayout>
+
+		<View
+		    android:layout_width="match_parent"
+		    android:layout_height="1px"
+		    android:background="#e7e7e6" />
+
+		<LinearLayout
+		    android:paddingLeft="10dip"
+	        android:paddingRight="10dip"
+	        android:paddingTop="10dip"
+	        android:paddingBottom="10dip"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical" 
+		   >
+
+		    <LinearLayout
+		        android:id="@+id/email_settting_ly"
+		        android:layout_width="match_parent"
+		        android:layout_height="40dp"
+		        android:background="#ffffff"
+		        android:gravity="center|start"
+		        android:orientation="horizontal"
+		        android:paddingBottom="10dip"
+		        android:paddingTop="10dip" >
+
+		        <TextView
+		             style="@style/DefaultFontStyle"
+		            android:id="@+id/textView4"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="  消息与邮件设置" />
+		    </LinearLayout>
+		</LinearLayout>
+		<View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#e7e7e6" />
+
+    <LinearLayout
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="10dip"
+        android:paddingBottom="10dip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/weibo_ly"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#ffffff"
+            android:gravity="center|start"
+            android:paddingBottom="10dip"
+            android:paddingTop="10dip" >
+
+            <TextView
+                 style="@style/DefaultFontStyle"
+                android:id="@+id/user_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  微博账号" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#e7e7e6" />
+
+    <LinearLayout
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="10dip"
+        android:paddingBottom="10dip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/qq_ly"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#ffffff"
+            android:gravity="center|start" >
+
+            <TextView
+                 style="@style/DefaultFontStyle"
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  QQ账号" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#e7e7e6" />
+
+    <LinearLayout
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="10dip"
+        android:paddingBottom="10dip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/email_ly"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#ffffff"
+            android:gravity="center|left"
+            android:orientation="vertical" >
+
+            <TextView
+                 style="@style/DefaultFontStyle"
+                android:id="@+id/email_report"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  邮件反馈" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#e7e7e6" />
+
+    <LinearLayout
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="10dip"
+        android:paddingBottom="10dip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/exit_login"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#ffffff"
+            android:gravity="center|start" >
+
+            <TextView
+                 style="@style/DefaultFontStyle"
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  退出我的账号" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

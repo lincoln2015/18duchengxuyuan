@@ -1,0 +1,129 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:background="#e7e7e6" >
+
+    <LinearLayout
+        android:background="#0077d9"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp" >
+
+            <LinearLayout
+                android:paddingLeft="5dp"
+                android:id="@+id/search_ly"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="9"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <EditText
+                  	android:layout_marginRight="3dp"
+                    android:background="#ffffff"
+                    android:hint="搜索用户,内容"
+                    android:id="@+id/search_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10" >
+
+                    <requestFocus />
+                </EditText>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cancel_ly"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:textSize="16sp"
+                    android:textColor="#ffffff"
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="取消" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginRight="6dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="10dp"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="30dp" >
+
+            <LinearLayout
+                android:id="@+id/content_ly"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="1px"
+                android:layout_weight="1"
+                android:background="#0077d9"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:textColor="#ffffff"
+                    android:textSize="13dp"
+                    android:id="@+id/content_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="内容" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/user_ly"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="1px"
+                android:layout_weight="1"
+                android:background="#0077d9"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                     android:textColor="#ffffff"
+                    android:textSize="13dp"
+                    android:id="@+id/user_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="用户" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="9"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <ListView
+            android:divider="@drawable/liner"
+            android:dividerHeight="1px"
+            android:id="@+id/content_user_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </ListView>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.testurlactivity"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="21" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".TestURLActivity"
+            android:label="@string/app_name" 
+            android:theme="@android:style/Theme.NoTitleBar"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+   		<activity
+            android:label="AddAnwserActivity"
+            android:launchMode="singleTop" 
+            android:name="AddAnwserActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+        
+   		<activity
+            android:label=" userDetailActivity"
+            android:launchMode="singleTop"
+            android:name="userDetailActivity"
+     		android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+        
+   		
+   		<activity
+            android:label="InviteUserActivity"
+            android:launchMode="singleTop"
+            android:name="InviteUserActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+        
+        
+   		<activity
+            android:label=" AddCommentActivity"
+            android:launchMode="singleTop"
+            android:name="AddCommentActivity"
+           >
+        </activity>
+        
+   		        
+   		<activity
+            android:label=" UserFocusTopicActivity"
+            android:launchMode="singleTop"
+            android:name="UserFocusTopicActivity"
+             android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+        
+   		   		        
+   		<activity
+            android:label=" UserFriendUserActivity"
+            android:launchMode="singleTop"
+            android:name="UserFriendUserActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+        
+   		   		   		        
+   		<activity
+            android:label="UserFansActivity"
+            android:launchMode="singleTop"
+            android:name="UserFansActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+   		
+   	   		   		   		        
+   		<activity
+            android:label="QuestionQuestionedActivity"
+            android:launchMode="singleTop"
+            android:name="QuestionQuestionedActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+   		
+   		<activity
+            android:label="QuestionAnsweredActivity"
+            android:launchMode="singleTop"
+            android:name="QuestionAnsweredActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+   		
+   		      
+   		<activity
+            android:label=" QuestionFocusUserActivity"
+            android:launchMode="singleTop"
+            android:name="QuestionFocusUserActivity"
+             android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+        
+   		
+        <activity
+            android:label=" QuestionCommentActivity"
+            android:launchMode="singleTop"
+            android:name="QuestionCommentActivity"
+           >
+        </activity>
+        
+           		
+        <activity
+            android:label="UserDetailForJudgeActivity"
+            android:launchMode="singleTop"
+            android:name="UserDetailForJudgeActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+        
+        <activity
+            android:label="PersonalTalkWriteMessage"
+            android:launchMode="singleTop"
+            android:name="PersonalTalkWriteMessage"
+            android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+        
+        
+       
+        <activity
+            android:label="UserLoginActivity"
+            android:launchMode="singleTop"
+            android:name="UserLoginActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+        
+         <activity
+            android:label="questionDetailActivity"
+            android:launchMode="singleTop"
+            android:name="questionDetailActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+        
+         <activity
+            android:label="AddQuestionActivity"
+            android:launchMode="singleTop"
+            android:name="AddQuestionActivity"
+             android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+        
+         <activity
+            android:label="AddQuestionDeatilActivity"
+            android:launchMode="singleTop"
+            android:name="AddQuestionDeatilActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+        
+        <activity
+            android:label="UserActionsActivity"
+            android:launchMode="singleTop"
+            android:name="UserActionsActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+         
+        <activity
+            android:label="FavorTagItemShowActivity"
+            android:launchMode="singleTop"
+            android:name="FavorTagItemShowActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+        
+         <activity
+            android:label="WritePersonalTalk"
+            android:launchMode="singleTop"
+            android:name="WritePersonalTalk"
+            android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+         
+            
+         <activity
+            android:label="AddFavorTagActivity"
+            android:launchMode="singleTop"
+            android:name="AddFavorTagActivity"
+           >
+        </activity>
+        
+               
+         <activity
+            android:label="AnswerContentDetailActivity"
+            android:launchMode="singleTop"
+            android:name="AnswerContentDetailActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+          
+           >
+        </activity>
+        
+        <activity
+            android:label="AddAnswerToFavorTagActivity"
+            android:launchMode="singleTop"
+            android:name="AddAnswerToFavorTagActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+        
+        <activity
+            android:label="AnswerCommentsShowActivity"
+            android:launchMode="singleTop"
+            android:name="AnswerCommentsShowActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+        
+        
+        <activity
+            android:label="WriteAnswerCommentActivity"
+            android:launchMode="singleTop"
+            android:name="WriteAnswerCommentActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+        
+           
+        <activity
+            android:label="WriteAnswerCommentMentionUserActivity"
+            android:launchMode="singleTop"
+            android:name="WriteAnswerCommentMentionUserActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+        
+         <activity
+            android:label="NotificationUsersShowActivity"
+            android:launchMode="singleTop"
+            android:name="NotificationUsersShowActivity"
+           >
+        </activity>
+        
+         <activity
+            android:label="CategoryShowDetailActivity"
+            android:launchMode="singleTop"
+            android:name="CategoryShowDetailActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+        
+         
+         <activity
+            android:label="CategoryQuestionsActivity"
+            android:launchMode="singleTop"
+            android:name="CategoryQuestionsActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+        
+        <activity
+            android:label="NotificationSetttingActivity"
+            android:launchMode="singleTop"
+            android:name="NotificationSetttingActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+        
+        <activity
+            android:label="AccountEmailSettingActivity"
+            android:launchMode="singleTop"
+            android:name="AccountEmailSettingActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+        
+        <activity
+            android:label="UserDetailEditActivity"
+            android:launchMode="singleTop"
+            android:name="UserDetailEditActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+           >
+        </activity>
+        
+         <activity
+            android:label="testImgviewActivity"
+            android:launchMode="singleTop"
+            android:name="testImgviewActivity"
+           >
+        </activity>
+        
+         <activity
+            android:label="AddQuestionToCategoryActivity"
+            android:launchMode="singleTop"
+            android:name="AddQuestionToCategoryActivity"
+           >
+        </activity>
+       
+          <activity
+            android:label="RigisterActivity"
+            android:launchMode="singleTop"
+            android:name="RigisterActivity"
+           >
+        </activity>
+       
+
+    </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+</manifest>

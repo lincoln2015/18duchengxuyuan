@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:background="#cccccc"
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <TextView
+            android:textSize="16sp"
+          	android:textColor="#3d3a3a"
+            android:id="@+id/warning_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请选择分类" />
+
+    </LinearLayout>
+<View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#e7e7e6" />
+    <LinearLayout
+        android:id="@+id/sure_ly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="10dip" >
+
+        <TextView
+            android:textSize="16sp"
+              android:textColor="#0077d9"
+            android:id="@+id/user_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="确定" />
+
+    </LinearLayout>
+
+</LinearLayout>

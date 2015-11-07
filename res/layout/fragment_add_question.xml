@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:background="#e7e7e6">
+ 
+    <LinearLayout
+    
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="8" >
+        
+            <ScrollView
+                android:id="@+id/scrollView1"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:fadingEdge="vertical"
+                android:scrollbars="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" >
+
+                <com.example.testurlactivity.MyEditText
+                    android:id="@+id/question_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="492dp"
+                    android:background="@null"
+                    android:ems="10"
+                    android:gravity="top"
+                    android:hint="请输入问题" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,109 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:background="#e7e7e6" >
+
+  <RelativeLayout
+            android:id="@+id/toppanel"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" >
+            
+      
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#0077d9"
+      
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/back_ly"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center|left"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:src="@drawable/back" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:textColor="#ffffff"
+                android:id="@+id/my_favor_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的收藏夹"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+               android:id="@+id/finish_ly"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                 android:textColor="#ffffff"
+                android:id="@+id/finish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="完成"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    
+      
+   
+ </RelativeLayout>
+ 
+    <LinearLayout
+        android:background="#e5e4e4"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/add_favor_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/add_favor" />
+
+    </LinearLayout>
+
+    <LinearLayout
+           android:layout_weight="8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ListView
+            android:divider="@drawable/liner"
+            android:id="@+id/favor_tag_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+        </ListView>
+
+    </LinearLayout>
+
+</LinearLayout>

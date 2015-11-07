@@ -1,0 +1,130 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/personal_talk_writemessage_ly"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:background="#e7e7e6">
+
+  <RelativeLayout
+            android:id="@+id/toppanel"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#0077d9"
+        android:gravity="center|top" >
+
+        <LinearLayout
+            android:id="@+id/back_ly"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.16"
+            android:gravity="center|left"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/invite_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back" />
+
+        </LinearLayout>
+
+        <LinearLayout
+              android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+               android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/peple_talk_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 android:textColor="#ffffff"
+                   android:textSize="16sp"
+                android:text="TextView" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/delete_ly"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.24"
+            android:gravity="center|right"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 android:textColor="#ffffff"
+                 android:textSize="15sp"
+                android:text="删除" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+ </RelativeLayout>
+ 
+    <LinearLayout
+           android:layout_weight="8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <ListView
+            android:divider="@drawable/liner"
+            android:dividerHeight="1px"
+            android:id="@+id/message_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </ListView>
+
+    </LinearLayout>
+
+    <LinearLayout
+           android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="11"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/write_message_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <requestFocus />
+            </EditText>
+
+        </LinearLayout>
+
+        <LinearLayout
+              android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/send"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="发送" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

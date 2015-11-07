@@ -1,0 +1,123 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/category_ly"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:textColor="#0077d9"
+                android:id="@+id/category_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+             android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/question_by_user_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|right"
+                android:src="@drawable/ic_launcher" />
+
+            <TextView
+                android:ellipsize="end"
+               	android:maxEms="4"
+               	android:singleLine="true"
+                android:textColor="#0077d9"
+                android:id="@+id/question_by_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:text="TextView" 
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+	
+    <LinearLayout
+        android:id="@+id/question_content_ly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/question_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+        	android:ellipsize="end"
+            android:maxLines="2"
+            style="@style/DefaultFontStyle"
+            android:textSize="16sp" 
+            android:paddingTop="10dip"
+            android:paddingBottom="10dip"
+            android:paddingLeft="10dip"/>
+
+    </LinearLayout>
+	
+
+    <LinearLayout
+        android:id="@+id/answer_ly2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.09" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                 android:textColor="#ffffff"
+                 android:background="#0077d9"
+                android:id="@+id/answer_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dip"
+                android:paddingBottom="15dip"
+                android:textSize="12sp"
+                android:text="TextView" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                 android:textSize="15sp" 
+                android:id="@+id/question_newest_answer_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" 
+                android:ellipsize="end"
+                style="@style/DefaultFontStyle"
+                android:paddingTop="10dip"
+                android:paddingBottom="15dip"
+                android:paddingLeft="10dip"
+                android:maxLines="2"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
