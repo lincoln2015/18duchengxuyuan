@@ -318,6 +318,8 @@ public class homeFragment extends Fragment implements OnClickListener{
 		 else 
 			 loginTextView.setText("µÇÂ¼");
 		 
+		
+		 
 		return view;
 	}
 	
