@@ -114,12 +114,7 @@ public class QuestionListAdapter extends ArrayAdapter<Question> {
 	        TextView questionByUserNameView = (TextView) view.findViewById(R.id.question_by_user_name);
 	        
 	        TextView questionNewestAnswerContentView = (TextView) view.findViewById(R.id.question_newest_answer_content);
-	        
-	        View answerLY = (View) view.findViewById(R.id.answer_ly2);
-	        
-	        View questionContentLy   =   (View) view.findViewById(R.id.question_content_ly);
-	        
-	        View categoryLy   =   (View) view.findViewById(R.id.category_ly);
+
 	        
 	        int answerCount = mQuestionList.get(position).getAnswerCount();
 	   
@@ -130,7 +125,10 @@ public class QuestionListAdapter extends ArrayAdapter<Question> {
 	        questionContentView.setText(mQuestionList.get(position).getContent());
 	        
 	        if (answerCount ==0)
-	        	answerLY.setVisibility(View.GONE);
+	        {
+	        	answerCountView.setVisibility(View.GONE);
+	        	questionNewestAnswerContentView.setVisibility(View.GONE);
+	        }
 	        else
 	        {
 	        	answerCountView.setText(Integer.toString(answerCount) + "   ");
@@ -149,7 +147,8 @@ public class QuestionListAdapter extends ArrayAdapter<Question> {
 	            	questionNewestAnswerContentView.setText(tmpStr);
 	            
 
-	     		answerLY.setVisibility(View.VISIBLE);
+	     		answerCountView.setVisibility(View.VISIBLE);
+	        	questionNewestAnswerContentView.setVisibility(View.VISIBLE);
 	        }
 	        
 	     
@@ -208,7 +207,7 @@ public class QuestionListAdapter extends ArrayAdapter<Question> {
 	  
 	        
 	        
-	        categoryLy.setOnClickListener(new View.OnClickListener() {
+	        categoryTitleView.setOnClickListener(new View.OnClickListener() {
 				
 				@Override
 				public void onClick(View v) {
@@ -246,7 +245,7 @@ public class QuestionListAdapter extends ArrayAdapter<Question> {
 	  
 	        
 	        
-	        questionContentLy.setOnClickListener(new View.OnClickListener() {
+	        questionContentView.setOnClickListener(new View.OnClickListener() {
 	        	
 
 				
@@ -295,7 +294,7 @@ public class QuestionListAdapter extends ArrayAdapter<Question> {
 				}
 			});
 	  
-	        answerLY.setOnClickListener(new View.OnClickListener() {
+	        questionNewestAnswerContentView.setOnClickListener(new View.OnClickListener() {
 				
 				@Override
 				public void onClick(View v) {

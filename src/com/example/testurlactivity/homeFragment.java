@@ -49,7 +49,7 @@ public class homeFragment extends Fragment implements OnClickListener{
 	 private Button urlConnectionBtn;
 	 private Button httpUrlConnectionBtn;
 	 private Button httpClientBtn;
-	 private View loginView;
+
 	 private View backView;
 	 private TextView loginTextView;
 	 View answerView;
@@ -109,7 +109,7 @@ public class homeFragment extends Fragment implements OnClickListener{
 	  }
 	  
 	  // 使用ApacheHttp客户端进行连接(重要方法)
-	  if (v == loginView) {
+	  if (v == loginTextView) {
 
 		   /* Intent intent = new Intent(getActivity(), UserLoginActivity.class);
 		    startActivity(intent);*/
@@ -302,10 +302,9 @@ public class homeFragment extends Fragment implements OnClickListener{
 
 		new ApacheHttpThread().start();
 
-		loginView = (View) view.findViewById(R.id.login_ly);
-		loginView.setOnClickListener(this);
 		
-		loginTextView = (TextView) view.findViewById(R.id.login);
+		loginTextView = (TextView) view.findViewById(R.id.login_ly);
+		loginTextView.setOnClickListener(this);
 		
 		backView = (View) view.findViewById(R.id.back_ly);
 		backView.setOnClickListener(this);

@@ -5,68 +5,42 @@
     android:orientation="vertical" >
     
 	<RelativeLayout
+	   		android:background="#0077d9"
             android:id="@+id/toppanel"
             android:layout_width="fill_parent"
             android:layout_height="50dip"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true" >
-    <LinearLayout
-        android:background="#0077d9"
+    
+
+    <ImageView
+        android:id="@+id/back_ly"
+        android:layout_width="31dp"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:src="@drawable/menu" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center|left"
-            android:orientation="vertical" >
+    <TextView
+        android:id="@+id/index_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="首页"
+        android:textColor="#ffffff"
+        android:textSize="16sp" 
+        android:layout_centerInParent="true"/>
 
-            <ImageView
-                android:id="@+id/back_ly"
-                android:layout_width="31dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/menu" />
+    <TextView
+        android:id="@+id/login_ly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="登录"
+        android:textColor="#ffffff"
+        android:textSize="16sp" 
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"/>
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center|left"
-            android:orientation="vertical" >
-
-            <TextView
-                android:textColor="#ffffff"
-                android:id="@+id/index_page"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="首页"
-                android:textSize="16sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/login_ly"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center|right"
-            android:orientation="vertical" >
-
-            <TextView
-                  android:textColor="#ffffff"
-                android:id="@+id/login"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="登录"
-                android:textSize="16sp" />
-
-        </LinearLayout>
-
-    </LinearLayout>
  </RelativeLayout>
  
     <LinearLayout
