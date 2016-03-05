@@ -13,8 +13,11 @@ public class URLHelper {
     public static final String SERVER_URl = "http://daxiangxbsm2.gotoip1.com/wecenter2/?";*/
 
 	// 表现好 ，头像 和答案图片均能上传	,有时候头像更新不了   ，稍微有点卡
-	public static final String IP_URL = "18ducxy.com";
-    public static final String SERVER_URl = "http://18ducxy.com/wecenter2/?";
+	//public static final String IP_URL = "18ducxy.com";
+    // public static final String SERVER_URl = "http://18ducxy.com/wecenter2/?";
+	
+	public static final String IP_URL = "192.168.1.4";
+    public static final String SERVER_URl = "http://192.168.1.4/wecenter2/?";
     
     public static  boolean ISLOGIN = false;
     

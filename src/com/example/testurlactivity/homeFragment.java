@@ -33,16 +33,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.webkit.WebView;
+import android.widget.AbsListView;
+import android.widget.AbsListView.OnScrollListener;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Toast;
 
-public class homeFragment extends Fragment implements OnClickListener{
+public class homeFragment extends Fragment implements OnClickListener {
 	
 	private Button testBtn;
 	 private Button connectBtn;
@@ -65,23 +68,34 @@ public class homeFragment extends Fragment implements OnClickListener{
 	 private View mRootView;
 	 private QuestionListAdapter mAdapter;
 	 
-	 private ArrayList<Question> mQuestionList;
+	private ArrayList<Question> mQuestionList;
+
+	ArrayList<Bitmap> bitMapList;
+
+	int QUESTION_DETAIL_START_REQUEST = 1000;
+	int QUESTION_DETAIL_END_REQUEST = 1001;
+	int ADD_QUESTION_START_REQUEST = 1002;
+	int ADD_QUESTION_END_REQUEST = 1003;
+
+	int USER_LOGIN_START_REQUEST = 1004;
+	int USER_LOGIN_END_REQUEST = 1005;
+
+	int QUESTION_DETAIL_START_REQUEST_2 = 2000;
+	int QUESTION_DETAIL_END_REQUEST_2 = 2001;
+
+	private View moreView;
+	private TextView tv_load_more;
+	private ProgressBar pb_load_progress;
+
+    private int startIndex = 0;
+    private int requestSize = 10;
+    private int lastItem;
+    private int nextPage = 1;
+    
+    private String TAG = "homeFragment";
 	 
-	 ArrayList<Bitmap> bitMapList;
-	 
-		int QUESTION_DETAIL_START_REQUEST = 1000;
-		int QUESTION_DETAIL_END_REQUEST = 1001;
-		int ADD_QUESTION_START_REQUEST = 1002;
-		int ADD_QUESTION_END_REQUEST = 1003;
-		
-		int USER_LOGIN_START_REQUEST = 1004;
-		int USER_LOGIN_END_REQUEST = 1005;
-		
-		int	QUESTION_DETAIL_START_REQUEST_2 = 2000;
-		int QUESTION_DETAIL_END_REQUEST_2 = 2001;
-		
-	 
-	 
+
+    private static final int LOAD_DATA_FINISH = 1;
 	 @Override
 	 public void onClick(View v) {
 	  // 直接使用URL对象进行连接
@@ -134,7 +148,6 @@ public class homeFragment extends Fragment implements OnClickListener{
 				    
 				 startActivity(intent);
 				 */
-				 
 
 	 			Intent intent = new Intent(getActivity(), UserLoginActivity.class);
 
@@ -177,16 +190,23 @@ public class homeFragment extends Fragment implements OnClickListener{
 	 public Handler myHandler = new Handler() {
 	     @Override
 	     public void handleMessage(Message msg) {
-	         if (msg.what == 0x14) {
-	        	 	showImageView.setImageBitmap(bitmap);
-	           
-	         }
-	         if (msg.what == 0x15) {
-					Bundle bundle = msg.getData();
+	    	
+			if (msg.what == LOAD_DATA_FINISH) {
+				   tv_load_more.setText(R.string.no_more_data);
+                   pb_load_progress.setVisibility(View.GONE);
 
-					showTextView.setText(bundle.getString("text1"));
-	            
-	          }
+			}
+
+			if (msg.what == 0x14) {
+				showImageView.setImageBitmap(bitmap);
+
+			}
+			if (msg.what == 0x15) {
+				Bundle bundle = msg.getData();
+
+				showTextView.setText(bundle.getString("text1"));
+
+			}
 	          
 	         if (msg.what == 0x16) {
 	     				Bundle bundle = msg.getData();
@@ -196,9 +216,12 @@ public class homeFragment extends Fragment implements OnClickListener{
 	         }
 	         if (msg.what == 0x18) {
   				Bundle bundle = msg.getData();
+  				
+  				tv_load_more.setText(R.string.load_more_data);
+				pb_load_progress.setVisibility(View.GONE);
 
-  				mAdapter.updateListView(bitMapList);
-              
+  				mAdapter.updateListView(mQuestionList, bitMapList);
+
 	         }
 	 		
 	         if (msg.what == 0x17) {
@@ -207,7 +230,7 @@ public class homeFragment extends Fragment implements OnClickListener{
 					
 					new urlThreadGetImg().start();
 				
-					 mMontactListView = (ListView)mRootView.findViewById(R.id.questionlistview);
+					
 					 if(mQuestionList != null && !mQuestionList.isEmpty())
 					 {
 						 mAdapter = new QuestionListAdapter(getActivity(), R.layout.question_list_item, mQuestionList);
@@ -218,10 +241,13 @@ public class homeFragment extends Fragment implements OnClickListener{
 			
 	          
 	         	}
-	  
-	         
-	      
-	        
+	         if (msg.what == 0x19) {
+					Bundle bundle = msg.getData();
+	
+					new urlThreadGetImg().start();
+  
+	         	}
+  
 	     }
 
 	 };
@@ -283,7 +309,160 @@ public class homeFragment extends Fragment implements OnClickListener{
 	
 		
 	}
+	
+	private void loadMoreData() {
 
+		tv_load_more.setText(R.string.loading_data);
+		pb_load_progress.setVisibility(View.VISIBLE);
+
+		new Thread() {
+
+			public void run() {
+
+				try {
+					// 通过webview来解析网页
+
+					HttpClient client = new DefaultHttpClient();
+
+					HttpGet httpGet = new HttpGet(URLHelper.SERVER_URl
+							+ "/test/ajax/list_question_page/?page=" + nextPage);
+					// HttpGet httpGet = new HttpGet(URLHelper.SERVER_URl +
+					// "/test/ajax/list_question/");
+					// HttpGet httpGet = new
+					// HttpGet("http://192.168.0.104/wecenter2/?/explore/ajax/list/");
+					// HttpGet httpGet = new
+					// HttpGet("http://192.168.0.104/wecenter2/?flagmobile=1");
+					// 获取相应消息
+					HttpResponse httpResponse = client.execute(httpGet);
+					// 获取消息内容
+					HttpEntity entity = httpResponse.getEntity();
+
+					is = entity.getContent();
+					// 把消息对象直接转换为字符串
+					// String content = EntityUtils.toString(entity);
+					// showTextView.setText(content);
+
+					// ///////////////////*************////////////////////
+
+					try {
+						BufferedReader reader = new BufferedReader(
+								new InputStreamReader(is, "UTF-8"));
+						StringBuilder sb = new StringBuilder();
+						String line = null;
+						while ((line = reader.readLine()) != null) {
+							sb.append(line + "\n");
+						}
+						is.close();
+						json2 = sb.toString();
+						
+						/*
+						JSONArray json = new JSONObject(sb.toString())
+								.getJSONArray("value");*/
+						
+						JSONObject tempJson = new JSONObject(json2);
+						if (tempJson.has("value"))
+						{
+
+							JSONArray json = tempJson.getJSONArray("value");
+							for (int i = 0; i < json.length(); i++) {
+								JSONObject jsonObject = (JSONObject) json.opt(i);
+	
+								JSONObject qestionInfoJsonObject = new JSONObject(
+										jsonObject.getString("question_info"));
+								Question question = new Question(
+										qestionInfoJsonObject);
+	
+								if (jsonObject
+										.getString("question_newest_answer_info") != "false") {
+									JSONObject questionNewestAnswerInfoJsonObject = new JSONObject(
+											jsonObject
+													.getString("question_newest_answer_info"));
+									question.setNewestAnswer(questionNewestAnswerInfoJsonObject
+											.getString("answer_content"));
+									question.setNewestAnswerID(questionNewestAnswerInfoJsonObject
+											.getInt("answer_id"));
+								} else {
+									question.setNewestAnswer("");
+								}
+	
+								if (jsonObject
+										.getString("question_publish_user_info") != "false") {
+									JSONObject qestionPublishUserInfoJsonObject = new JSONObject(
+											jsonObject
+													.getString("question_publish_user_info"));
+									question.setUserName(qestionPublishUserInfoJsonObject
+											.getString("user_name"));
+	
+									question.setUserAvatarFile(qestionPublishUserInfoJsonObject
+											.getString("avatar_file").replace(
+													"localhost", URLHelper.IP_URL));
+									// add laterly for get publish user
+									question.setPublishUser(new User(
+											qestionPublishUserInfoJsonObject));
+								} else {
+									question.setUserName("");
+									question.setUserAvatarFile("");
+								}
+	
+								if (jsonObject.getString("category_info") != "false") {
+									JSONObject categoryInfoJsonObject = new JSONObject(
+											jsonObject.getString("category_info"));
+									question.setCategoryTitle(categoryInfoJsonObject
+											.getString("title"));
+									question.setCategoryId(categoryInfoJsonObject
+											.getInt("id"));
+	
+								} else {
+									question.setCategoryTitle("");
+								}
+	
+								mQuestionList.add(question);
+							}
+							nextPage++;
+							
+							Message msg = new Message();
+							msg.what = 0x19;
+	
+							Bundle bundle = new Bundle();
+							bundle.clear();
+	
+							// bundle.putString("recv_server", new String(buffer));
+							bundle.putString("text3", json2.toString());
+							msg.setData(bundle);
+							myHandler.sendMessage(msg);
+	
+							Thread.sleep(3000);
+						
+						}		
+						else
+						{
+
+							myHandler.sendEmptyMessage(LOAD_DATA_FINISH);
+						}
+
+						
+					} catch (Exception e) {
+						Log.e("Buffer Error",
+								"Error converting result " + e.toString());
+						Log.d("json", json2.toString());
+					}
+
+					
+				} catch (ClientProtocolException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+
+				// myHandler.sendEmptyMessage(LOAD_DATA_FINISH);
+
+			}
+
+			;
+		}.start();
+	}
 
 
 	@Override
@@ -308,6 +487,39 @@ public class homeFragment extends Fragment implements OnClickListener{
 		
 		backView = (View) view.findViewById(R.id.back_ly);
 		backView.setOnClickListener(this);
+		
+		 mMontactListView = (ListView)mRootView.findViewById(R.id.questionlistview);
+		 
+		LayoutInflater inflater2 = LayoutInflater.from(getActivity().getApplicationContext());
+        moreView = inflater2.inflate(R.layout.home_listview_footer_more, null);
+        tv_load_more = (TextView) moreView.findViewById(R.id.tv_load_more);
+        pb_load_progress = (ProgressBar) moreView.findViewById(R.id.pb_load_progress);
+        
+        mMontactListView.addFooterView(moreView);
+        
+        mMontactListView.setOnScrollListener(new OnScrollListener() {
+
+        	@Override
+        	public void onScrollStateChanged(AbsListView paramAbsListView, int scrollState) {
+        	
+        		 if (lastItem == mAdapter.getCount()
+        	                && scrollState == OnScrollListener.SCROLL_STATE_IDLE) {
+
+        	            Log.e(TAG, "load more");
+
+        	            startIndex += requestSize;
+
+        	            loadMoreData();
+        	        }
+
+        	}
+
+        	@Override
+        	public void onScroll(AbsListView paramAbsListView, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+        		 lastItem = firstVisibleItem + visibleItemCount - 1;
+        	}
+        });
+       
 		
 		
 		bitMapList = new ArrayList<Bitmap> ();
@@ -455,7 +667,8 @@ public class homeFragment extends Fragment implements OnClickListener{
 				
 				HttpClient client = new DefaultHttpClient();
 				
-				 HttpGet httpGet = new HttpGet(URLHelper.SERVER_URl + "/test/ajax/list_question/");
+				HttpGet httpGet = new HttpGet(URLHelper.SERVER_URl + "/test/ajax/list_question_page/?page="+nextPage);
+				// HttpGet httpGet = new HttpGet(URLHelper.SERVER_URl + "/test/ajax/list_question/");
 				// HttpGet httpGet = new HttpGet("http://192.168.0.104/wecenter2/?/explore/ajax/list/");
 				// HttpGet httpGet = new HttpGet("http://192.168.0.104/wecenter2/?flagmobile=1");
 				// 获取相应消息
@@ -534,7 +747,8 @@ public class homeFragment extends Fragment implements OnClickListener{
 	              
 	                    
 	                    mQuestionList.add(question);
-	                }          
+	                }       
+	                nextPage++;
 		          
 		        } catch (Exception e) {
 		            Log.e("Buffer Error", "Error converting result " + e.toString());

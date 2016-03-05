@@ -47,9 +47,10 @@ public class QuestionListAdapter extends ArrayAdapter<Question> {
 		bitMapList = null;
 	}
 	
-	public void updateListView(ArrayList<Bitmap> bitmapList){
+	public void updateListView(ArrayList<Question> questionList, ArrayList<Bitmap> bitmapList){
 		// this.mQuestionList = list;
 		this.bitMapList = bitmapList;
+		this.mQuestionList = questionList;
 		notifyDataSetChanged();
 }
 
